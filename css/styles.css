@@ -171,10 +171,6 @@ color: var(--light-blue-color);
 color: var(--second-text-color);
 }
 
-.menu-item {
-position: relative;
-}
-
 .menu-link {
 font-weight: var(--medium-font-weight);
 font-size: var(--smollest-font-size);
@@ -184,7 +180,17 @@ color: var(--second-text-color);
 transition: color var(--transition-dur-and-func);
 }
 
-.menu-link:hover::after {
+.menu-link:hover,
+.menu-link:focus {
+color: var(--accent-color);
+}
+
+.current {
+position: relative;
+color: var(--accent-color);
+}
+
+.current::after {
 display: block;
 content: '';
 width: 100%;
@@ -193,12 +199,7 @@ background-color: var(--accent-color);
 border-radius: 2px;
 position: absolute;
 left: 0;
-top: 45px;
-}
-
-.menu-link:hover,
-.menu-link:focus {
-color: var(--accent-color);
+margin-top: 21px;
 }
 
 .contact {
